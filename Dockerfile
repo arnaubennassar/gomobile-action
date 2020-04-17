@@ -223,4 +223,4 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" "$GOPATH/pkg" && chmod -R 777 "$GOPATH"
 RUN go get golang.org/x/mobile/cmd/gomobile
 RUN gomobile init
 
-ENTRYPOINT [ "/bin/bash", "-c", "'set -xe && $SCRIPT'" ]
+ENTRYPOINT [ "/bin/bash", "-c", "'set -xe && $script'" ]
