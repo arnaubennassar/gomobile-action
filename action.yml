@@ -1,0 +1,18 @@
+name: GomobileAndroid
+description: Bind Go code to Android using Gomobile
+
+inputs:
+  command:  # id of input
+    description: Bash commands to execute inside container
+    required: true
+    default: gomobile bind --target android -o /tmp/build/binded.aar
+
+outputs:
+  artifacts: # id of output
+    description: Generated artifacts
+
+runs:
+  using: docker
+  image: Dockerfile
+  entrypoint:
+    - ${{ inputs.command }}
